@@ -1,0 +1,38 @@
+# Mac
+.DS_Store
+
+# Eclipse
+bin/
+
+# Intellij
+/.idea/
+
+# Maven
+log/
+target/
+
+# Gradle
+/.gradle/
+/build/
+
+# sbt
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+logs/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Sonar
+/.sonar/
+
+# Application
+/sudoku.log
