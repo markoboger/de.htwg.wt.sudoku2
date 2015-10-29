@@ -3,11 +3,8 @@
 
 # Eclipse
 bin/
-<<<<<<< HEAD
-./settings
-=======
-.settings/
->>>>>>> Lecture04-CSS
+settings/
+.classpath
 
 # Intellij
 /.idea/
