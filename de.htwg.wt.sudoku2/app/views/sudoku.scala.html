@@ -1,7 +1,33 @@
-@(game: String)
+@(controller:de.htwg.sudoku.controller.ISudokuController)
 
-@main("Welcome to Sudoku") {
+@main("HTWG Sudoku") {
 
-    <code> @Html(game) </code>
+	@for(row <- 0 until controller.getSize){
+	    <div>
+			@for(column <- 0 until controller.getSize){
+	            <span><font size="8"> @if(controller.getValue(row,column) != 0) {@controller.getValue(row,column)}</font>
+	                @if(controller.getValue(row,column) == 0) {
+	                	@if(controller.isShowCandidates(row, column)) {
+							<span>
+								@for( i <- 1 to controller.getSize) {
+									@if(i % controller.getBlockSize == 1) {
+										<span>
+									}
+	                                
+	                                    @if(controller.isCandidate(row, column,i)) {@i}
+	                                
+									@if(i % controller.getBlockSize == 0) {
+										</span>
+									}
+								}
+							</span>
+						} else {
+	          				<font size="8"> _ </font>
+	        			}
+	        		}
+				</span>
+			}
+		</div>
+	}
 
 }

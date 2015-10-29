@@ -16,7 +16,7 @@ public class Application extends Controller {
     public Result sudoku(String command) {
     	TextUI tui=Sudoku.getInstance().getTui();
     	tui.processInputLine(command);   	
-        return ok(sudoku.render(tui.toHtml()));
+        return ok(sudoku.render(Sudoku.getInstance().getController()));
     }
 
 }
