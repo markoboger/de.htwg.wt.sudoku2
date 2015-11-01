@@ -1,0 +1,28 @@
+body {
+    background-image: url("/images/sudoku_3d.jpg");
+    background-repeat: no-repeat;
+    background-position: 600px 26px;
+    background-color: #dbdbf6;
+}
+
+h1 {
+    font-size: 76px;
+}
+
+#frame {
+    width: 815px;
+    padding: 25px;
+    border: 1px solid navy;
+    margin: 25px;
+	
+}
+
+#top-text {
+    width: 450px;
+    padding: 0px;
+}
+
+
+p > a {
+	font-size: 30px;
+}

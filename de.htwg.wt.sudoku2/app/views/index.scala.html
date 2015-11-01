@@ -1,32 +1,35 @@
 @(message: String)
 
 @main("Welcome to Sudoku") {
+<link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/index.css")' />
 
-<h1>Sudoku</h1>
-
-<p>This project is an implementation of the Sudoku game for the lecture <strong>Web Technologies</strong> at the University of Applied Science Konstanz, Germany.</p>
-
-<p>Main goal of the application is to demonstrate the development of a software project in an agile development methodology. </p>
-
-<p>It shows </p>
-
-<ul>
-<li>The Play Framework</li>
-<li>HTML</li>
-<li>CSS</li>
-<li>Bootstrap</li>
-<li>JavaScript</li>
-<li>Ajax, Commet and Web Sockets</li>
-<li>AngularJS</li>
-<li>Polymer</li>
-<li>Authentication</li>
-<li>Deployment</li>
-</ul>
-
-<p>The initial user interface is a console-based text UI. Its purpose is to be able to interact with the application as early as possible. 
-The Tui is built in a way so that it continues to run in parallel with a GUI or WUI. </p>
-
-    
-<p> <a href="/sudoku/n"> play Sudoku now </a> </p>
+	<div id="frame">
+		<h1>HTWG Sudoku</h1>
+		<div id="top-text">
+			<p>This project is an implementation of the Sudoku game for the lecture <strong>Web Technologies</strong> at the University of Applied Science Konstanz, Germany.</p>
+			
+			<p>Main goal of the application is to demonstrate the development of a software project in an agile development methodology. </p>
+		</div>
+		<p>It shows </p>
+		
+		<ul>
+			<li>The Play Framework</li>
+		 	<li>HTML</li>
+			<li>CSS</li>
+			<li>Bootstrap</li>
+			<li>JavaScript</li>
+			<li>Ajax, Commet and Web Sockets</li>
+			<li>AngularJS</li>
+			<li>Polymer</li>
+			<li>Authentication</li>
+			<li>Deployment</li>
+		</ul>
+		
+		<p>The initial user interface is a console-based text UI. Its purpose is to be able to interact with the application as early as possible. 
+		The Tui is built in a way so that it continues to run in parallel with a GUI or WUI. </p>
+		    
+		<p> <a href="/sudoku"> play Sudoku now </a> </p>
+	</div>
 
 }
+
