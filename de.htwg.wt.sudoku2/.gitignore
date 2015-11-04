@@ -19,16 +19,17 @@ target/
 
 # sbt
 .cache
+.cache-main
+.cache-tests
 .history
 .lib/
+lib/*.tmp
 dist/*
 target/
 lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
-project/target/
-project/project/
 logs/
 project/.sbtserver
 .sbtserver/
