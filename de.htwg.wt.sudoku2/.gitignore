@@ -4,6 +4,7 @@
 # Eclipse
 bin/
 .settings/
+.classpath
 
 # Intellij
 /.idea/
@@ -18,8 +19,11 @@ target/
 
 # sbt
 .cache
+.cache-main
+.cache-tests
 .history
 .lib/
+lib/*.tmp
 dist/*
 target/
 lib_managed/
