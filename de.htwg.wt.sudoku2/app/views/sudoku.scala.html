@@ -2,6 +2,7 @@
 
 @main("HTWG Sudoku") {
 <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/main.css")' />
+<script type='text/javascript' src='@routes.Assets.versioned("javascripts/sudoku.js")'></script>
 
     <div class="game">
         <div class="row">	        
@@ -24,7 +25,7 @@
 				                if (blockname == "") {blockname = "C"}
 				                blockname + "block"
 			                }">
-			                <span class="cellouter">
+			                <span class="cellouter" data-row="@row" data-column="@column">
 				                <span
 				                @{
 					                if (controller.isGiven(row, column)) {
@@ -47,7 +48,7 @@
 														@if(i % controller.getBlockSize == 1) {
 															<span>
 														}
-																<div class="candidatecell">
+																<div class="candidatecell" data-row="@row" data-column="@column" data-value="@i">
 			                                                        <p class="candidatetext">
 			                                                            @if(controller.isCandidate(row, column,i)) {@i}
 			                                                        </p>
