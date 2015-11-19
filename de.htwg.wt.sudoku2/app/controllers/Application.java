@@ -25,13 +25,13 @@ public class Application extends Controller {
     
     public Result showCandidates(int row, int column) {
     	controller.showCandidates(row, column);
-    	String data = "Server shows Candidate";
-    	return ok(Json.toJson(data));
+    	String grid = controller.toJson();
+    	return ok(Json.toJson(grid));
     }
     
     public Result setValue(int row, int column, int value) {
     	controller.setValue(row, column, value);
-    	String grid = controller.getGridString();
+    	String grid = controller.toJson();
     	return ok(Json.toJson(grid));
     }
     
