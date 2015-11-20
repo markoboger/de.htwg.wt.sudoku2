@@ -3,8 +3,8 @@ package controllers;
 import de.htwg.sudoku.Sudoku;
 import de.htwg.sudoku.aview.tui.TextUI;
 import de.htwg.sudoku.controller.ISudokuController;
-import play.libs.Json;
 import play.mvc.*;
+import play.api.libs.json.*;
 
 import views.html.*;
 
@@ -25,14 +25,14 @@ public class Application extends Controller {
     
     public Result showCandidates(int row, int column) {
     	controller.showCandidates(row, column);
-    	String data = "Server shows Candidate";
-    	return ok(Json.toJson(data));
+    	JsValue sudoku = Json.parse(controller.toJson());
+    	return ok(sudoku);
     }
     
     public Result setValue(int row, int column, int value) {
     	controller.setValue(row, column, value);
-    	String grid = controller.getGridString();
-    	return ok(Json.toJson(grid));
+    	JsValue sudoku = Json.parse(controller.toJson());
+    	return ok(sudoku);
     }
     
     
