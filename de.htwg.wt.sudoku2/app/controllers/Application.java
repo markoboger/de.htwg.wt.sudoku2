@@ -27,6 +27,7 @@ public class Application extends Controller {
     	controller.showCandidates(row, column);
     	JsValue sudoku = Json.parse(controller.toJson());
     	return ok(sudoku);
+
     }
     
     public Result setValue(int row, int column, int value) {
