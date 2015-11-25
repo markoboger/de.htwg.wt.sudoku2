@@ -6,10 +6,11 @@
 GET     /                           controllers.Application.index()
 GET		/sudoku						controllers.Application.sudoku(command:String = "f")
 GET		/sudoku/:command			controllers.Application.sudoku(command:String)
-GET 	/highlight/:n		controllers.Application.highlight(n:Int)
+
+GET 	/json/:row/:column			controllers.Application.showCandidates(row:Int, column:Int)
+GET 	/json/:row/:column/:value	controllers.Application.setValue(row:Int, column:Int, value:Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /javascripts/*file          controllers.Assets.at(path="/public/javascripts", file)
 GET     /images/*file               controllers.Assets.at(path="/public/images", file)
-GET     /webjars/*file              controllers.WebJarAssets.at(file)

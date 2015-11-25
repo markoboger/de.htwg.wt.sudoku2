@@ -1,12 +1,10 @@
 package controllers;
 
 import de.htwg.sudoku.Sudoku;
-import de.htwg.sudoku.aview.StatusMessage;
 import de.htwg.sudoku.aview.tui.TextUI;
-import de.htwg.sudoku.controller.GameStatus;
 import de.htwg.sudoku.controller.ISudokuController;
-import play.*;
 import play.mvc.*;
+import play.api.libs.json.*;
 
 import views.html.*;
 
@@ -22,17 +20,22 @@ public class Application extends Controller {
     public Result sudoku(String command) {
     	TextUI tui=Sudoku.getInstance().getTui();
     	tui.processInputLine(command);   	
-    	GameStatus status = Sudoku.getInstance().getController().getStatus();
-    	String statusMessage = StatusMessage.text.get(status);
-        return ok(sudoku.render(controller, statusMessage ));
+        return ok(sudoku.render(controller));
     }
     
-    public Result highlight(int n) {
-    	ISudokuController controller=Sudoku.getInstance().getController();
-    	controller.highlight(n);  	
-    	GameStatus status = Sudoku.getInstance().getController().getStatus();
-    	String statusMessage = StatusMessage.text.get(status);
-        return ok(sudoku.render(controller, statusMessage ));
+    public Result showCandidates(int row, int column) {
+    	controller.showCandidates(row, column);
+    	JsValue sudoku = Json.parse(controller.toJson());
+    	return ok(sudoku);
+
     }
+    
+    public Result setValue(int row, int column, int value) {
+    	controller.setValue(row, column, value);
+    	JsValue sudoku = Json.parse(controller.toJson());
+    	return ok(sudoku);
+    }
+    
+    
 
 }
