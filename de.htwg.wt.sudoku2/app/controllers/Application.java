@@ -3,10 +3,11 @@ package controllers;
 import de.htwg.sudoku.Sudoku;
 import de.htwg.sudoku.aview.tui.TextUI;
 import de.htwg.sudoku.controller.ISudokuController;
-import play.mvc.*;
-import play.api.libs.json.*;
-
-import views.html.*;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.index;
+import views.html.sudoku;
 
 public class Application extends Controller {
 	
@@ -25,15 +26,14 @@ public class Application extends Controller {
     
     public Result showCandidates(int row, int column) {
     	controller.showCandidates(row, column);
-    	JsValue sudoku = Json.parse(controller.toJson());
-    	return ok(sudoku);
+    	
+    	return ok(Json.toJson(controller.toJson()));
 
     }
     
     public Result setValue(int row, int column, int value) {
     	controller.setValue(row, column, value);
-    	JsValue sudoku = Json.parse(controller.toJson());
-    	return ok(sudoku);
+    	return ok(Json.toJson(controller.toJson()));
     }
     
     
