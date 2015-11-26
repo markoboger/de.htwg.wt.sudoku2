@@ -27,7 +27,7 @@ public class Application extends Controller {
     public Result showCandidates(int row, int column) {
     	controller.showCandidates(row, column);
     	
-    	return ok(Json.toJson(controller.toJson()));
+    	return ok(Json.toJson("{1,2,3,4}"));
 
     }
     
