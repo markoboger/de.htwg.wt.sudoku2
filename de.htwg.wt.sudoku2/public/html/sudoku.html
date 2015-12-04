@@ -7,29 +7,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
         <script type="text/javascript" src="/sudoku_ng.js"></script>
-		<script>
-		     var sudokuApp = angular.module('sudokuApp', []);
-		     sudokuApp.controller('SudokuCtrl', function ($scope, $http){
-		     	$http.get('/json/').success(function(data) {  
-		     	   $scope.size = data.size;
-                   $scope.grid = data.grid;  
-                   $scope.cellclicked = function( row, column, value) {
-                	   console.log("Received click "+row+column+value);
-                	   
-                   }
-                   fillGrid($scope.grid);
-                 });   
-		     	
-		     	
-             });
-	   </script>
     </head>
     <body ng-controller="SudokuCtrl">
         <div class="game">
 			<div class="grid" id="size{{size}}">
 				<div class="cellouter" ng-repeat="cell in grid">
-	                <div class="cellborder" id={{cell.isGiven}}  >
-		                <div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="cellclicked( 9,8,7)" data-row="{{cell.row}}" data-column="{{cell.column}}" data-value="{{cell.value}}">{{cell.value}} </div>
+	                <div class="cellborder" id={{cell.status}}  >
+		                <div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="cellclicked(cell.row,cell.column,cell.value) " >{{candidates[0]}} </div>
 				    </div>
 				</div>
 			</div>
