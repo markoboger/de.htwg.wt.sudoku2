@@ -2,11 +2,19 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
+# Implementation using Play
 GET     /                           controllers.Application.index()
 GET		/sudoku						controllers.Application.sudoku(command:String = "f")
 GET		/sudoku/:command			controllers.Application.sudoku(command:String)
 
+# Implememtation using Angular.js
+GET     /sudoku.html                controllers.Assets.at(path="/public/html", file="sudoku.html")
+GET     /sudoku_ng.js     			controllers.Assets.at(path="/public/javascripts", file="sudoku_ng.js")
+GET     /sudoku.css                 controllers.Assets.at(path="/public/stylesheets", file="sudoku.css")
+GET		/sudoku9.json	            controllers.Assets.at(path="/public/data", file="sudoku9.json")
+
+# Links to Json resources, used by all
+GET 	/json/						controllers.Application.getJson()
 GET 	/json/:row/:column			controllers.Application.showCandidates(row:Int, column:Int)
 GET 	/json/:row/:column/:value	controllers.Application.setValue(row:Int, column:Int, value:Int)
 

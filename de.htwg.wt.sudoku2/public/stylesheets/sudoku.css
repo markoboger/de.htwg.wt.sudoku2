@@ -16,7 +16,13 @@
 .highlightbuttons {
 	font-size: 16px;
 }
-.outmost-nine {
+.grid {
+ 	border-width:0px;
+	padding:0px;
+	background-color: #000000;
+	border-spacing: 0px;
+}
+#size9 {
 	margin:auto;
 	width:514px;
 	border-style: inset;
@@ -24,7 +30,7 @@
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.outmost-four {
+#size4 {
 	margin:auto;
 	width:231px;
 	border-style: inset;
@@ -32,7 +38,7 @@
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.outmost-one {
+#size1 {
 	margin:auto;
 	width:62px;
 	float:left;
@@ -41,12 +47,7 @@
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.grid {
- 	border-width:0px;
-	padding:0px;
-	background-color: #000000;
-	border-spacing: 0px;
-}
+
 .gridrow {
 	display: inline-block;
 	padding:0px;
@@ -56,7 +57,7 @@
 .cellouter {
 	 display: inline-block;
 	 background-color:#E0E0FF;
-	 padding: 3px;
+	 padding: 1px;
 }
 .cellborder {
 	display: inline-block;
@@ -84,7 +85,7 @@
 	line-height: 56px;
 	font-size:36px;
     position:relative;
-    bottom:6px;
+    bottom:2px;
  }
 .celltext {
 	line-height: 56px;

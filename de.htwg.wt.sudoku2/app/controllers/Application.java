@@ -24,16 +24,19 @@ public class Application extends Controller {
         return ok(sudoku.render(controller));
     }
     
+    public Result getJson() {
+    	controller.toJson();
+    	return ok(controller.toJson());
+    }
+    
     public Result showCandidates(int row, int column) {
     	controller.showCandidates(row, column);
-    	
-    	return ok(Json.toJson("{1,2,3,4}"));
-
+    	return ok(controller.toJson());
     }
     
     public Result setValue(int row, int column, int value) {
     	controller.setValue(row, column, value);
-    	return ok(Json.toJson(controller.toJson()));
+    	return ok(controller.toJson());
     }
     
     
