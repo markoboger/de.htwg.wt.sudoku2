@@ -39,7 +39,7 @@
 					                }
 				                }
 				                class="cellborder">
-					                <div class="cell"><font size="8"> @if(controller.getValue(row,column) != 0) {@controller.getValue(row,column)}</font>
+					                <div class="cell" id="@(row*10+column)"> @if(controller.getValue(row,column) != 0) {@controller.getValue(row,column)}
 					                    @if(controller.getValue(row,column) == 0) {
 					                    	@if(controller.isShowCandidates(row, column)) {
 
@@ -49,9 +49,7 @@
 															<span>
 														}
 																<div class="candidatecell" data-row="@row" data-column="@column" data-value="@i">
-			                                                        <p class="candidatetext">
-			                                                            @if(controller.isCandidate(row, column,i)) {@i}
-			                                                        </p>
+			                                                        <p class="candidatetext">@if(controller.isCandidate(row, column,i)) {@i}</p>
 			                                                    </div>
 														@if(i % controller.getBlockSize == 0) {
 															</span>
