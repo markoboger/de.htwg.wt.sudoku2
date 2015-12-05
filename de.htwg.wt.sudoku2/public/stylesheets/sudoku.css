@@ -70,10 +70,10 @@
 }
 .candidate {
 	display: inline-block;
-	padding: 0px;
-	border-width:0px;
-	border-spacing: 0px;
+	width: 15px;
 	line-height: 0px;
+	font-size:11px;
+	line-height: -1px;
 }
 .cell {
 	display: inline-block;

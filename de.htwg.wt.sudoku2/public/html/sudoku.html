@@ -4,8 +4,8 @@
     <head>
         <title>Sudoku</title>
         <link rel="stylesheet" href="/sudoku.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+		<script src="http:////ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
         <script type="text/javascript" src="/sudoku_ng.js"></script>
     </head>
     <body ng-controller="SudokuCtrl">
@@ -13,7 +13,7 @@
 			<div class="grid" id="size{{size}}">
 				<div class="cellouter" ng-repeat="cell in grid">
 	                <div class="cellborder" id={{cell.status}}  >
-		                <div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="cellclicked(cell.row,cell.column,cell.value) " >{{candidates[0]}} </div>
+		                <div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="!cell.candidates && cellclicked(cell.row,cell.column,cell.value) " ng-bind-html="(cellHtml[cell.row*10+cell.column])">x</div>
 				    </div>
 				</div>
 			</div>
