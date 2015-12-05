@@ -1,0 +1,6 @@
+<div class="cellouter" ng-repeat="cell in grid">
+	<div class="cellborder" id={{cell.status}}  >
+		<sudoku-valuecell ng-show="!cell.candidates"></sudoku-valuecell>
+		<sudoku-candidatecell ng-show="cell.candidates"></sudoku-candidatecell>
+	</div>
+</div>

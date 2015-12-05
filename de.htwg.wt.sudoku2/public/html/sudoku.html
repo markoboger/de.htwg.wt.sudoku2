@@ -9,14 +9,6 @@
         <script type="text/javascript" src="/sudoku_ng.js"></script>
     </head>
     <body ng-controller="SudokuCtrl">
-        <div class="game">
-			<div class="grid" id="size{{size}}">
-				<div class="cellouter" ng-repeat="cell in grid">
-	                <div class="cellborder" id={{cell.status}}  >
-		                <div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="!cell.candidates && cellclicked(cell.row,cell.column,cell.value) " ng-bind-html="(cellHtml[cell.row*10+cell.column])">x</div>
-				    </div>
-				</div>
-			</div>
-		</div>
+    	<sudoku-grid>X</sudoku-grid>    
 	</body>
 </html>

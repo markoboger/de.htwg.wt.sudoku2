@@ -1,0 +1,4 @@
+<div class="cell" id="cell{{cell.row*10+cell.column}}" ng-click="!cell.candidates && cellclicked(cell.row,cell.column,cell.value) ">
+	<div ng-show="cell.value!==0">{{cell.value}}</div>
+	<div ng-show="cell.value===0"> &nbsp;</div>
+</div>

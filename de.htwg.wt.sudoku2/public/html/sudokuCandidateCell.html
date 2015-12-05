@@ -1,0 +1,6 @@
+<span class="candidatecell" id="cell{{cell.row*10+cell.column}}">
+	<span class="candidate" ng-repeat="candidate in cell.candidates" ng-click="candidateclicked(cell.row,cell.column,candidate)"> 
+		<span ng-show = "candidate > 0"> {{candidate}} </span>
+		<span ng-show = "candidate <= 0"> &nbsp; </span>
+	</span>
+</span>
