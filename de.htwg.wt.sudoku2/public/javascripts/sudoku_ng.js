@@ -37,10 +37,12 @@
     	   }
        }
        $scope.candidateclicked = function( row, column, value) {
-       	   $http.get('/json/'+row+'/'+column+'/'+value).success(function(data) {
-       		   $scope.size = data.size;
-               $scope.grid = data.grid;       
-       	   });
+    	   if (value >0) {
+    		   $http.get('/json/'+row+'/'+column+'/'+value).success(function(data) {
+           		   $scope.size = data.size;
+                   $scope.grid = data.grid;       
+           	   }); 
+    	   }
        }
      });   
  });

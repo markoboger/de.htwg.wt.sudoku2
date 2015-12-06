@@ -1,4 +1,3 @@
-
 .align {
 	margin-left:auto;
 	margin-right:auto;
@@ -16,15 +15,21 @@
 .highlightbuttons {
 	font-size: 16px;
 }
-.outmost-nine {
+.grid {
+ 	border-width:0px;
+	padding:0px;
+	background-color: #000000;
+	border-spacing: 0px;
+}
+#size9 {
 	margin:auto;
-	width:514px;
+	width:560px;
 	border-style: inset;
 	border-width: 2px;
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.outmost-four {
+#size4 {
 	margin:auto;
 	width:231px;
 	border-style: inset;
@@ -32,7 +37,7 @@
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.outmost-one {
+#size1 {
 	margin:auto;
 	width:62px;
 	float:left;
@@ -41,133 +46,109 @@
 	border-spacing: 0px;
 	border-color: #f6f6FF;
 }
-.grid {
- 	border-width:0px;
-	padding:0px;
-	background-color: #000000;
-	border-spacing: 0px;
-}
-.gridrow {
-	display: inline-block;
-	padding:0px;
-    font-size: 0px;
-	line-height:0px;
-}
 .cellouter {
 	 display: inline-block;
 	 background-color:#E0E0FF;
-	 padding: 3px;
+	 padding: 1px;
 }
 .cellborder {
 	display: inline-block;
 	border-style: outset;
 	border-width: 2px;
-	border-spacing: 0px;
-	padding: 0px;
 	background-color: #E0E0FF;
 	border-color: #f6f6FF;
 }
-.candidate {
-	display: inline-block;
-	padding: 0px;
-	border-width:0px;
-	border-spacing: 0px;
-	line-height: 0px;
-}
 .cell {
 	display: inline-block;
-	width: 46px;
-	height: 46px;
+	width: 52px;
+	height: 52px;
 	text-align: center;
-	padding: 0px;
-	border-width: 0px;
 	line-height: 56px;
-	font-size:36px;
+	font-size:40px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     position:relative;
-    bottom:6px;
+    bottom:2px;
  }
-.celltext {
-	line-height: 56px;
-	font-size:36px;
-}
-.candidatecell {
+ .candidatecell {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	text-align: center;
+	font-size:11px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position:relative;
+ }
+.candidate {
 	display: inline-block;
 	width: 15px;
-	height: 14px;
-	text-align: center;
-	padding: 0px;
-	border-width: 0px;
-
-}
-.candidatetext {
+	height: 16px;
 	font-size:11px;
-	line-height: -1px;
 }
 div.statusline {
 	font-size: 16px;
 	text-align: left;
 }
-#NWblock {
+.NWblock {
 	display: inline-block;
-	padding-top: 1px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 1px;
+	margin-top: 1px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 1px;
 }
-#Nblock {
+.Nblock {
 	display: inline-block;
-	padding-top: 1px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
+	margin-top: 1px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
 }
-#NEblock {
+.NEblock {
 	display: inline-block;
-	padding-top: 1px;
-	padding-right: 1px;
-	padding-bottom: 0px;
-	padding-left: 0px;
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 0px;
+	margin-left: 0px;
 }
-#Wblock {
+.Wblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 1px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 1px;
 }
-#Cblock {
+.Cblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
 }
-#Eblock {
+.Eblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 1px;
-	padding-bottom: 0px;
-	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 1px;
+	margin-bottom: 0px;
+	margin-left: 0px;
 }
-#SWblock {
+.SWblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 1px;
-	padding-left: 1px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-left: 1px;
 }
-#Sblock {
+.Sblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 1px;
-	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 1px;
+	margin-left: 0px;
 }
-#SEblock {
+.SEblock {
 	display: inline-block;
-	padding-top: 0px;
-	padding-right: 1px;
-	padding-bottom: 1px;
-	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	margin-left: 0px;
 }
 

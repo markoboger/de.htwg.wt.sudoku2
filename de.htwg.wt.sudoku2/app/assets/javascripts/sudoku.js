@@ -6,7 +6,7 @@ $(function() {
 		console.log("Received click at cell ("+ row + "," + column+")");
 		setShowCandidates(row, column);
 	});
-	$(".candidatecell").click(function(event) {
+	$(".candidate").click(function(event) {
 		var row = $(this).attr("data-row");
 		var column = $(this).attr("data-column");
 		var value = $(this).attr("data-value");
@@ -34,10 +34,10 @@ function fill_grid(data) {
     var arrayLength = grid.length;
     for (var i = 0; i < arrayLength; i++) {
         var cell = grid[i];
-        console.log("found cell ("+ cell.row + "," + cell.col + ")" + cell.val);
-        var id=cell.row*10+cell.col;
-        if (cell.val !== 0) {
-           $("#"+id).text(cell.val);
+        console.log("found cell ("+ cell.row + "," + cell.column + ")" + cell.value);
+        var id=cell.row*10+cell.column;
+        if (cell.value !== 0) {
+           $("#cell"+id).text(cell.value);
         }
     }
 }
