@@ -41,14 +41,14 @@
 			                <div class="cell" id="cell@(row*10+column)"> 
 			                    <div>@controller.getValue(row,column)</div>
 			                </div>} else {
-	                    	<span class="candidatecell" id="cell@(row*10+column)">
-								@for( i <- 1 to controller.getSize) {
-									<span class="candidate" data-row="@row" data-column="@column" data-value="@i">                   
-												@if(controller.isCandidate(row, column,i) && controller.isShowCandidates(row, column)) {@i} else {&nbsp;}
-                                       </span>
+	                    	<div class="candidatecell" id="cell@(row*10+column)">
+								@for( candidate <- 1 to controller.getSize) {
+									<div class="candidate" data-row="@row" data-column="@column" data-value="@candidate">                   
+										@if(controller.isCandidate(row, column,candidate) && controller.isShowCandidates(row, column)) {@candidate} else {&nbsp;}
+                                    </div>
 									
 								}
-							</span>
+							</div>
 						} 
                    		
 					</div>

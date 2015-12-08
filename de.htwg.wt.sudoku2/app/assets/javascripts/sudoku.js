@@ -17,14 +17,14 @@ $(function() {
 
 
 function setValue(row,column,value) {
-    $.get("/json/" + row +"/"+ column +"/"+ value, function (data) {
-        fill_grid(data);
+    $.get("/sudoku/" + row + column + value, function (data) {
+        location.reload();
     });
 }
 
 function setShowCandidates(row,column) {
-    $.get("/json/" + row +"/"+ column, function (data) {
-        fill_grid(data);
+    $.get("/sudoku/" + row + column, function (data) {
+        location.reload();
     });
 }
 
