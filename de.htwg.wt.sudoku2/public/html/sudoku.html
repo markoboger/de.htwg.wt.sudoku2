@@ -4,11 +4,99 @@
     <head>
         <title>Sudoku</title>
         <link rel="stylesheet" href="/sudoku.css">
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
 		<script src="http:////ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
-        <script type="text/javascript" src="/sudoku_ng.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="/sudoku_ng.js"></script>
     </head>
     <body ng-controller="SudokuCtrl">
-    	<sudoku-grid>X</sudoku-grid>    
+    
+	   	<nav class="navbar navbar-default" role="navigation">
+	 	  <!-- Brand and toggle get grouped for better mobile display -->
+	 	  <div class="navbar-header">
+	 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	 	      <span class="sr-only">Toggle navigation</span>
+	 	      <span class="icon-bar"></span>
+	 	      <span class="icon-bar"></span>
+	 	      <span class="icon-bar"></span>
+	 	    </button>
+	 	  </div>
+	 
+	 	  <!-- Collect the nav links, forms, and other content for toggling -->
+	 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	 	    <ul class="nav navbar-nav">
+	 	      <li class="dropdown">
+	 	      <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+	 	        <ul class="dropdown-menu">
+	 	          <li ng-click='command("n")'>New</li>
+	 	           <li class="divider"></li>
+	 	          <li><a href="#">Save</a></li>
+	 	          <li><a href="#">Load</a></li>
+	 	          <li class="divider"></li>
+	 	          <li><a href="#">Quit</a></li>
+	 	        </ul>
+	 	      </li>
+	 
+	 	      <li class="dropdown">
+	 	      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit <b class="caret"></b></a>
+	 	        <ul class="dropdown-menu">
+	 	          <li ng-click='command("z")'>Undo</li>
+	 	          <li ng-click='command("y")'>Redo</li>
+	 	          <li class="divider"></li>
+	 	          <li ng-click='command("c")'>Copy</li>
+	 	          <li ng-click='command("v")'>Paste</li>
+	 	        </ul>
+	 	      </li>
+	 
+	 	      <li class="dropdown">
+	 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solve <b class="caret"></b></a>
+	 	        <ul class="dropdown-menu">
+	 	          <li ng-click='command("s")'>Solve</li>
+	 	        </ul>
+	 	      </li>
+	 
+	 	      <li class="dropdown">
+	 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Highlight <b class="caret"></b></a>
+	 	        <ul class="dropdown-menu">
+	 	        	<li ng-click='command("0")'>none</li>
+	 	            <li ng-repeat="highlight in [1,2,3,4,5,6,7,8,9]" ng-click='command("{{highlight}}")'>{{highlight}}</li>}
+	 	        </ul>
+	 	      </li>
+	 
+	 	      <li class="dropdown">
+	 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
+	 	        <ul class="dropdown-menu">
+	 	          <li ng-click='command("#")'>toggle show Candidates</li>
+	 	          <li ng-click='command("*")'>Resize to 9*9</li>
+	 	          <li ng-click='command("+")'>Resize to 4*4</li>
+	 	          <li ng-click='command("-")'>Resize to 1*1</li>
+	 	        </ul>
+	 	      </li>
+	 	    </ul>
+	 	  </div><!-- /.navbar-collapse -->
+	 	</nav>
+ 
+ 
+   	   <div class="col-md-1"></div>
+		
+	   <div class="col-md-10 align">
+	     	<div class="highlightButtonGroup">
+	           Highlight:
+		       <div class="btn-group">
+		  	       <span ng-repeat="highlight in [0,1,2,3,4,5,6,7,8,9]">
+		  	          <button type="button" class="btn btn-default" ng-click='command("{{highlight}}")'>{{highlight}}</button>
+		  	       </span>
+		       </div> 
+	        </div>
+	   	
+    	
+    		<sudoku-grid>X</sudoku-grid> 
+    	
+    		<div class="statusline">Status: {{statusmessage}}</div>  
+		</div>
+		<div class="col-md-1"></div> 
 	</body>
 </html>

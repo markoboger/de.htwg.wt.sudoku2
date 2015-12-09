@@ -14,7 +14,8 @@ GET     /sudoku.css                 controllers.Assets.at(path="/public/styleshe
 GET		/sudoku9.json	            controllers.Assets.at(path="/public/data", file="sudoku9.json")
 
 # Links to Json resources, used by all
-GET 	/json/						controllers.Application.getJson()
+GET 	/json/sudoku	    		controllers.Application.getSudokuAsJson()
+GET 	/json/:command				controllers.Application.getJson(command:String)
 GET 	/json/:row/:column			controllers.Application.showCandidates(row:Int, column:Int)
 GET 	/json/:row/:column/:value	controllers.Application.setValue(row:Int, column:Int, value:Int)
 

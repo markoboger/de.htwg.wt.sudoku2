@@ -25,7 +25,7 @@
 	 });
  
  sudokuApp.controller('SudokuCtrl', function ($scope, $http){
- 	$http.get('/json/').success(function(data) {  
+ 	$http.get('/json/sudoku').success(function(data) {  
  	   $scope.size = data.size;
        $scope.grid = data.grid;  
        $scope.cellclicked = function( row, column, value) {
@@ -43,6 +43,12 @@
                    $scope.grid = data.grid;       
            	   }); 
     	   }
+       }
+       $scope.command = function( command) {
+		   $http.get('/json/'+command).success(function(data) {
+       		   $scope.size = data.size;
+               $scope.grid = data.grid;       
+       	   }); 
        }
      });   
  });

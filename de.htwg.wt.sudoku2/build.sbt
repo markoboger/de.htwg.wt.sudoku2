@@ -22,11 +22,17 @@ libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.
 
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.4.1"
 
+libraryDependencies += "org.webjars" % "bootstrap" % "3.3.5"
+
+libraryDependencies += "org.webjars" %% "webjars-play" % "2.4.0"
+
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
 
+
+fork in run := true
 
 fork in run := true
 
