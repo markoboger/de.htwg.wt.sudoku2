@@ -24,3 +24,14 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /javascripts/*file          controllers.Assets.at(path="/public/javascripts", file)
 GET     /images/*file               controllers.Assets.at(path="/public/images", file)
 GET     /html/*file                 controllers.Assets.at(path="/public/html", file)
+
+# Login page
+GET     /login                      securesocial.controllers.LoginPage.login
+GET     /logout                     securesocial.controllers.LoginPage.logout
+
+# Providers entry points
+GET     /authenticate/:provider     securesocial.controllers.ProviderController.authenticate(provider)
+POST    /authenticate/:provider     securesocial.controllers.ProviderController.authenticateByPost(provider)
+#GET     /not-authorized             securesocial.controllers.ProviderController.notAuthorized
+
+#->         /auth                securesocial.Routes

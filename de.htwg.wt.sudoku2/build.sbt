@@ -26,17 +26,13 @@ libraryDependencies += "org.webjars" % "bootstrap" % "3.3.5"
 
 libraryDependencies += "org.webjars" %% "webjars-play" % "2.4.0"
 
+libraryDependencies += "ws.securesocial" %% "securesocial" % "3.0-M3"
+
+resolvers += Resolver.sonatypeRepo("snapshots")
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
-
-
-fork in run := true
-
-fork in run := true
-
-fork in run := true
 
 fork in run := true
 

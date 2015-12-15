@@ -3,11 +3,16 @@ package controllers;
 import de.htwg.sudoku.Sudoku;
 import de.htwg.sudoku.aview.tui.TextUI;
 import de.htwg.sudoku.controller.ISudokuController;
-import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.index;
 import views.html.sudoku;
+import securesocial.core.BasicProfile;
+import securesocial.core.RuntimeEnvironment;
+import securesocial.core.java.SecureSocial;
+import securesocial.core.java.SecuredAction;
+import securesocial.core.java.UserAwareAction;
+import service.DemoUser;
 
 public class Application extends Controller {
 	
@@ -18,7 +23,9 @@ public class Application extends Controller {
     	return ok(index.render("Welcome to Sudoku"));
     }
     
+    @SecuredAction
     public Result sudoku(String command) {
+    	DemoUser user = (DemoUser) ctx().args.get(SecureSocial.USER_KEY);
     	tui.processInputLine(command);   	
         return ok(sudoku.render(controller));
     }
