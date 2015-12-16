@@ -26,7 +26,7 @@ libraryDependencies += "org.webjars" % "bootstrap" % "3.3.5"
 
 libraryDependencies += "org.webjars" %% "webjars-play" % "2.4.0"
 
-libraryDependencies += "ws.securesocial" %% "securesocial" % "3.0-M3"
+libraryDependencies += "ws.securesocial" %% "securesocial" % "3.0-M4"
 
 resolvers += Resolver.sonatypeRepo("snapshots")
 

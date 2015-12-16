@@ -5,7 +5,6 @@ import play.libs.F;
 import securesocial.core.BasicProfile;
 import securesocial.core.PasswordInfo;
 import securesocial.core.services.SaveMode;
-import securesocial.core.services.UserService;
 import securesocial.core.java.BaseUserService;
 import securesocial.core.java.Token;
 import securesocial.core.providers.UsernamePasswordProvider;
@@ -20,7 +19,7 @@ import java.util.Map;
  * Note: This is NOT suitable for a production environment and is provided only as a guide.
  * A real implementation would persist things in a database
  */
-public class InMemoryUserService extends BaseUserService<DemoUser> {
+public class InMemoryUserService extends BaseUserService<DemoUser>{
     public Logger.ALogger logger = play.Logger.of("application.service.InMemoryUserService");
 
     private HashMap<String, DemoUser> users = new HashMap<String, DemoUser>();
