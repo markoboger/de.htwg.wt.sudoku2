@@ -26,6 +26,7 @@ libraryDependencies += "org.webjars" % "bootstrap" % "3.3.5"
 
 libraryDependencies += "org.webjars" %% "webjars-play" % "2.4.0"
 
+libraryDependencies += "com.feth" %% "play-authenticate" % "0.7.1"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
@@ -34,10 +35,6 @@ routesGenerator := InjectedRoutesGenerator
 
 fork in run := true
 
-fork in run := true
 
-fork in run := true
-
-fork in run := true
 
 fork in run := true
